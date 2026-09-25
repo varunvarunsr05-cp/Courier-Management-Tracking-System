@@ -37,7 +37,7 @@ export default function ShipmentHistory() {
   return (
     <div>
       <section className="bg-gradient-to-b from-light-blue-bg to-white">
-        <div className="container-app grid grid-cols-1 gap-8 py-10 lg:grid-cols-2 lg:items-center">
+        <div className="max-w-screen-2xl mx-16 grid grid-cols-1 gap-8 py-10 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs text-text-muted">Home &gt; My Shipments</p>
             <p className="section-label mt-2">My Shipments</p>
@@ -62,7 +62,7 @@ export default function ShipmentHistory() {
         </div>
       </section>
 
-      <section className="container-app py-10">
+      <section className="max-w-screen-2xl mx-16 py-10">
         <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-xl font-extrabold text-text-primary">Submitted Shipments</h2>
