@@ -4,6 +4,7 @@ import { Package, User, MapPin, FileText, ArrowLeft, ArrowRight, ShieldCheck, Za
 import api from '../api/axios';
 import Input, { Field, Textarea, Select } from '../components/Input';
 import { ErrorBanner, Loading } from '../components/States';
+import hero from '../public/hero-bg.png'
 
 const steps = ['Shipment Details', 'Sender & Receiver', 'Review', 'Confirm'];
 
@@ -69,7 +70,7 @@ export default function ShipmentRequest() {
   return (
     <div>
       <section className="bg-off-white">
-        <div className="container-app grid grid-cols-1 gap-8 py-10 lg:grid-cols-2 lg:items-center">
+        <div className="max-w-screen-2xl mx-16 grid grid-cols-1 gap-8 py-10 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs text-text-muted">Home &gt; Shipment Request</p>
             <p className="section-label mt-2">Shipment Request</p>
@@ -83,15 +84,17 @@ export default function ShipmentRequest() {
               <span className="flex items-center gap-1.5"><Headphones size={15} className="text-blue" /> Real Support</span>
             </div>
           </div>
-          <div className="hidden justify-end lg:flex">
-            <Truck size={110} className="text-navy/20" strokeWidth={1} />
+          <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-br text-blue p-8 sm:p-6 bg-center bg-cover min-h-[400px]  max hidden justify-end lg:flex`}
+            style={{ backgroundImage: `url(${hero})` }}>
+            {/* <Truck size={110} className="text-navy/20" strokeWidth={1} /> */}
+            {/* <img src={hero} alt="" /> */}
           </div>
         </div>
       </section>
 
-      <section className="container-app py-10">
+      <section className="max-w-screen-2xl  mx-16 py-10">
         {/* Progress */}
-        <div className="mb-8 flex items-center gap-2 overflow-x-auto pb-2">
+        <div className="bg-border p-5 mb-2 flex items-center gap-2 overflow-x-auto pb-5">
           {steps.map((s, i) => (
             <div key={s} className="flex items-center gap-2">
               <div className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${i === step ? 'bg-navy text-white' : i < step ? 'bg-light-blue-bg text-blue' : 'bg-off-white text-text-muted'}`}>

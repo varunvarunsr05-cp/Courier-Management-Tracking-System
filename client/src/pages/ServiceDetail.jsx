@@ -21,13 +21,13 @@ export default function ServiceDetail() {
   }, [id]);
 
   if (loading) return <Loading />;
-  if (error || !service) return <div className="container-app py-16"><ErrorState description={error} /></div>;
+  if (error || !service) return <div className="max-w-screen-2xl ml-16 py-16"><ErrorState description={error} /></div>;
 
   const Icon = iconMap[service.icon] || Package;
 
   return (
     <div className="section">
-      <div className="container-app">
+      <div className="max-w-screen-2xl mx-16">
         <Link to="/services" className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue"><ArrowLeft size={15} /> Back to Services</Link>
 
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">

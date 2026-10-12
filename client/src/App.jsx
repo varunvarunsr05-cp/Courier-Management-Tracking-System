@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+// import { token1 } from './api/axios';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -33,6 +34,7 @@ import AdminSettings from './pages/admin/AdminSettings';
 //   useEffect(() => window.scrollTo(0, 0), [pathname]);
 //   return null;
 // }
+// console.log("i am tokennnnnnnnnnn"+token1)
 
 function ScrollToTop() {
   const { pathname } = useLocation();

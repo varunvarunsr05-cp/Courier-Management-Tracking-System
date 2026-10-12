@@ -7,6 +7,8 @@ import {
 import api from '../api/axios';
 import { Loading, ErrorState, EmptyState } from '../components/States';
 import StatusBadge from '../components/StatusBadge';
+import { motion } from 'framer-motion';
+import express from '../public/express.png'
 
 const stepIcon = {
   booked: Package,
@@ -65,33 +67,36 @@ export default function Track() {
 
   return (
     <div>
-      <section className="bg-off-white">
-        <div className="container-app grid grid-cols-1 gap-8 py-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="section-label">Track Your Shipment</p>
-            <h1 className="mt-2 text-3xl font-extrabold text-text-primary sm:text-4xl">
-              Know Exactly Where <span className="text-orange">Your Package</span> Is
-            </h1>
-            <p className="mt-3 max-w-md text-sm text-text-secondary">Enter your tracking ID to get real-time updates on your shipment. Fast. Accurate. Always.</p>
-            <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-2 rounded-2xl border border-border bg-white p-2 shadow-panel sm:flex-row">
-              <div className="relative flex-1">
-                <Package size={17} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted" />
-                <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter your tracking ID (e.g. SSP123456789)" className="w-full rounded-xl border-0 bg-off-white py-3 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue/20" />
+      <section className="bg-center  bg-cover lg:min-h-[650px]"
+      style={{backgroundImage:`url(${express})`}}>
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+
+          <div className="max-w-screen-2xl mx-16 grid grid-cols-1 gap-8 py-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="section-label">Track Your Shipment</p>
+              <h1 className="mt-2 text-3xl font-extrabold text-text-primary sm:text-4xl">
+                Know Exactly Where <span className="text-orange">Your Package</span> Is
+              </h1>
+              <p className="mt-3 max-w-md text-sm text-text-secondary">Enter your tracking ID to get real-time updates on your shipment. Fast. Accurate. Always.</p>
+              <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-2 rounded-2xl border border-border bg-white p-2 shadow-panel sm:flex-row">
+                <div className="relative flex-1">
+                  <Package size={17} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted" />
+                  <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Enter your tracking ID (e.g. SSP123456789)" className="w-full rounded-xl border-0 bg-off-white py-3 pl-10 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue/20" />
+                </div>
+                <button type="submit" className="btn-primary justify-center">Track Shipment <ArrowRight size={16} /></button>
+              </form>
+            </div>
+            <div className="hidden justify-center lg:flex">
+              <div className="rounded-2xl bg-white p-5 shadow-card">
+                <p className="mb-2 text-xs font-bold text-text-primary">Real-Time Tracking</p>
+                <p className="mb-2 flex items-center gap-1.5 text-xs text-text-muted"><ShieldCheck size={13} /> Secure & Reliable</p>
+                <p className="flex items-center gap-1.5 text-xs text-text-muted"><Globe2 size={13} /> Pan-India Coverage</p>
               </div>
-              <button type="submit" className="btn-primary justify-center">Track Shipment <ArrowRight size={16} /></button>
-            </form>
-          </div>
-          <div className="hidden justify-center lg:flex">
-            <div className="rounded-2xl bg-white p-5 shadow-card">
-              <p className="mb-2 text-xs font-bold text-text-primary">Real-Time Tracking</p>
-              <p className="mb-2 flex items-center gap-1.5 text-xs text-text-muted"><ShieldCheck size={13} /> Secure & Reliable</p>
-              <p className="flex items-center gap-1.5 text-xs text-text-muted"><Globe2 size={13} /> Pan-India Coverage</p>
             </div>
           </div>
-        </div>
+          </motion.div>
       </section>
-
-      <section className="container-app py-10">
+      <section className=" max-w-screen-2xl mx-16 py-10">
         {loading && <Loading label="Fetching tracking details..." />}
         {!loading && searched && error && <ErrorState title="Shipment not found" description={error} />}
         {!loading && !searched && (
@@ -99,7 +104,7 @@ export default function Track() {
         )}
 
         {!loading && result && (
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className=" grid grid-cols-1 gap-6 lg:grid-cols-3">
             <div className="card p-6 lg:col-span-2">
               <div className="flex items-center justify-between">
                 <h3 className="text-base font-bold text-text-primary">Tracking Details</h3>
@@ -170,7 +175,7 @@ export default function Track() {
         )}
       </section>
 
-      <section className="container-app pb-10">
+      <section className="bg-border mb-4 max-w-screen-2xl mx-16 rounded-lg p-7 pb-10">
         <h3 className="mb-5 text-lg font-bold text-text-primary">More Ways to Track</h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[

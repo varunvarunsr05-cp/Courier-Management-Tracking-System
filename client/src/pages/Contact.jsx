@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <div>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-      <section className="bg-navy">
+      <section className="bg-navy min-h-[550px]">
         <div className="max-w-screen-2xl mx-16 py-14">
           <div className='flex justify-between'>
           <div>

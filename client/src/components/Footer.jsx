@@ -5,7 +5,7 @@ import Logo from './Logo';
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="container-app grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="max-w-screen-2xl mx-16 grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo light />
           <p className="mt-4 max-w-xs text-sm text-white/70">
@@ -58,7 +58,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-app flex flex-col items-center justify-between gap-2 py-5 text-xs text-white/60 sm:flex-row">
+        <div className="max-w-screen-2xl flex flex-col items-center justify-between mx-16 gap-2 py-5 text-xs text-white/60 sm:flex-row">
           <p>© {new Date().getFullYear()} SwiftShip. All rights reserved.</p>
           <p className="italic">People · Packages · Possibilities</p>
         </div>

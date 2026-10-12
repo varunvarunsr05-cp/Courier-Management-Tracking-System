@@ -45,7 +45,7 @@ export default function Register() {
 
   return (
     <div className="grid min-h-[calc(100vh-64px)] grid-cols-1 lg:grid-cols-2">
-      <div className="flex items-center justify-center px-4 py-12 sm:px-8">
+      <div className="flex items-center ml-13 justify-center  py-12 sm:px-8">
         <div className="w-full max-w-screen-2xl mx-16">
           <p className="text-xs text-text-muted">Home &gt; Register</p>
           <h1 className="mt-2 text-3xl font-extrabold text-text-primary">
@@ -129,8 +129,8 @@ export default function Register() {
         </div>
       </div>
 
-      <div className="relative hidden overflow-hidden bg-gradient-to-br from-navy to-blue px-10 py-16 lg:flex lg:flex-col lg:justify-center">
-        <img width='550px' src={domestic} alt="domestic-del-img" className='rounded-md mb-4' />
+      <div className="relative hidden overflow-hidden bg-gradient-to-br pl-14  from-navy to-blue px-10 py-12 lg:flex lg:flex-col lg:justify-center">
+        <img width='650px' src={domestic} alt="domestic-del-img" className='rounded-md mb-4' />
 
         <p className="text-xs font-bold uppercase tracking-wider text-white/60">Welcome to SwiftShip</p>
         <h2 className="mt-3 max-w-md text-3xl font-extrabold leading-tight text-white">

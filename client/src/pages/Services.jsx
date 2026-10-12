@@ -6,6 +6,8 @@ import {
 import api from '../api/axios';
 import ServiceCard from '../components/ServiceCard';
 import { Loading, ErrorState, EmptyState } from '../components/States';
+import business from '../public/business.png'
+import { motion } from 'framer-motion';
 
 const trust = [
   { icon: ShieldCheck, title: 'Secure Handling', desc: 'Your packages are in safe hands' },
@@ -33,30 +35,41 @@ export default function Services() {
   return (
     <div>
       <section className="bg-off-white">
-        <div className="container-app grid grid-cols-1 gap-8 py-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-xs text-text-muted">Home &gt; Services</p>
-            <p className="section-label mt-3">Our Services</p>
-            <h1 className="mt-2 text-3xl font-extrabold text-text-primary sm:text-4xl">
-              Shipping Solutions for <span className="text-orange">Every Need</span>
-            </h1>
-            <p className="mt-3 max-w-lg text-sm text-text-secondary">
-              From documents to large shipments, we deliver with speed, safety, and reliability. Choose the service that fits your needs.
-            </p>
-          </div>
-          <div className="relative rounded-3xl bg-gradient-to-br from-navy to-blue p-10">
-            <Truck size={130} className="mx-auto text-white/90" strokeWidth={1.2} />
-            <div className="absolute right-4 top-4 space-y-2 rounded-xl bg-white/95 p-3 text-xs font-semibold text-navy shadow-card">
-              <p className="flex items-center gap-1.5"><ShieldCheck size={14} /> Safe & Secure</p>
-              <p className="flex items-center gap-1.5"><Truck size={14} /> On-Time Delivery</p>
-              <p className="flex items-center gap-1.5"><Globe2 size={14} /> Pan-India Coverage</p>
+          <div className="max-w-screen-2xl mx-16 grid grid-cols-1 gap-8 py-12 lg:grid-cols-2 lg:items-center">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <div>
+              <p className="text-xs text-text-muted">Home &gt; Services</p>
+              <p className="section-label mt-3">Our Services</p>
+              <h1 className="mt-2 text-3xl font-extrabold text-text-primary sm:text-4xl">
+                Shipping Solutions for <span className="text-orange">Every Need</span>
+              </h1>
+              <p className="mt-3 max-w-lg text-sm text-text-secondary">
+                From documents to large shipments, we deliver with speed, safety, and reliability. Choose the service that fits your needs.
+              </p>
             </div>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <div className="relative rounded-3xl bg-gradient-to-br
+         p-10 min-h-[400px] bg-center bg-cover"
+        style={{backgroundImage:`url(${business})`}}>
+          {/* <Truck size={120} className="mx-auto text-white/90" strokeWidth={1.2} /> */}
+          {/* <img width='460px' src={business} alt="" className='rounded-md' /> */}
+
+          <div className="absolute sm:right-4 top-4 space-y-2 rounded-xl bg-white/95 p-3 text-xs font-semibold text-navy shadow-card">
+            <p className="flex items-center gap-1.5"><ShieldCheck size={14} /> Safe & Secure</p>
+            <p className="flex items-center gap-1.5"><Truck size={14} /> On-Time Delivery</p>
+            <p className="flex items-center gap-1.5"><Globe2 size={14} /> Pan-India Coverage</p>
           </div>
         </div>
-      </section>
+        </motion.div>
+    </div>
+        {/* <div className='bg-border h-2'  ></div> */ }
+      </section >
 
-      <section className="section">
-        <div className="container-app">
+      <section className="section bg-border">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <div className="max-w-screen-2xl mx-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="section-label">Our Services</p>
@@ -75,7 +88,6 @@ export default function Services() {
               </div>
             )}
           </div>
-
           <div className="mt-10 grid grid-cols-2 gap-6 rounded-2xl bg-light-blue-bg p-6 sm:grid-cols-4">
             {trust.map((t) => (
               <div key={t.title} className="flex items-center gap-3">
@@ -90,10 +102,11 @@ export default function Services() {
             ))}
           </div>
         </div>
+         </motion.div>   
       </section>
 
       <section className="section bg-off-white">
-        <div className="container-app">
+        <div className="max-w-screen-2xl mx-16">
           <p className="section-label">Simple Steps</p>
           <h2 className="mt-2 text-2xl font-extrabold text-text-primary sm:text-3xl">How It Works</h2>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -111,14 +124,14 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="container-app py-4">
-        <div className="rounded-2xl bg-navy px-6 py-10 sm:px-12">
+      <section className="max-w-screen-2xl mx-16 py-4">
+        <div className="rounded-2xl text-center bg-navy px-6 py-10 sm:px-12">
           <p className="text-xs font-bold uppercase tracking-wider text-orange">Ready to Ship?</p>
           <h3 className="mt-3 text-2xl font-extrabold text-white sm:text-3xl">Send Smarter Today</h3>
-          <p className="mt-2 max-w-md text-sm text-white/70">Choose the right service and experience hassle-free delivery.</p>
+          <p className="mt-2 text-sm text-white/70">Choose the right service and experience hassle-free delivery.</p>
           <Link to="/shipment-request" className="btn-accent mt-6 inline-flex">Create Shipment <ArrowRight size={16} /></Link>
         </div>
       </section>
-    </div>
+    </div >
   );
 }

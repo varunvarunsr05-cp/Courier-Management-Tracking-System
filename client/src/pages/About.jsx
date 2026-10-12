@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Globe2, Package, Users, ShieldCheck, ArrowRight, Rocket, Eye, Heart, Truck } from 'lucide-react';
+import express from '../public/express.png'
+import { motion } from 'framer-motion';
+
 
 const stats = [
   { icon: Globe2, value: '200+', label: 'Countries' },
@@ -18,7 +21,8 @@ export default function About() {
   return (
     <div>
       <section className="bg-navy">
-        <div className="container-app grid grid-cols-1 gap-8 py-14 lg:grid-cols-2 lg:items-center">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <div className="max-w-screen-2xl ml-16 grid grid-cols-1 gap-8 py-14 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-white/60">About SwiftShip</p>
             <h1 className="mt-3 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -30,10 +34,12 @@ export default function About() {
             <p className="mt-4 border-l-2 border-orange pl-3 text-sm italic text-white/80">"Reliable. Fast. Global."</p>
           </div>
           <div className="flex justify-center">
-            <Truck size={130} className="text-white/15" strokeWidth={1} />
+            {/* <Truck size={130} className="text-white/15" strokeWidth={1} /> */}
+            <img width='500px' src={express} alt="" className='rounded-md' />
+
           </div>
         </div>
-        <div className="container-app pb-10">
+        <div className="max-w-screen-2xl mx-16 pb-10">
           <div className="grid grid-cols-2 gap-6 rounded-2xl bg-white/10 p-6 sm:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="flex items-center gap-3">
@@ -46,16 +52,17 @@ export default function About() {
             ))}
           </div>
         </div>
+      </motion.div>
       </section>
 
       <section className="section">
-        <div className="container-app grid grid-cols-1 gap-10 lg:grid-cols-3">
+        <div className="max-w-screen-xl ml-16 grid grid-cols-1 gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <p className="section-label">Our Story</p>
             <h2 className="mt-2 text-2xl font-extrabold text-text-primary sm:text-3xl">
               Built on Trust. <span className="text-orange">Driven by People.</span>
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+            <p className="mt-4 text-left text-sm leading-relaxed text-text-secondary">
               SwiftShip was founded with a simple vision — to make global shipping smarter, faster, and more reliable. What started as a small logistics network has grown into a trusted delivery partner, serving individuals, businesses, and communities across the country.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
@@ -76,7 +83,7 @@ export default function About() {
       </section>
 
       <section className="bg-off-white pb-14">
-        <div className="container-app grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="max-w-screen-2xl mx-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div>
             <p className="section-label">Global Reach</p>
             <h3 className="mt-2 text-2xl font-extrabold text-text-primary">A Stronger, <span className="text-orange">More Connected Tomorrow</span></h3>

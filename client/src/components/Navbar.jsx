@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur">
-      <div className="container-app flex h-16 items-center justify-between gap-4">
+      <div className="max-w-screen-2xl mx-16 flex h-16 items-center justify-between gap-4">
         <Link to="/" className="shrink-0">
           <Logo />
         </Link>
@@ -49,9 +49,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button className="rounded-full p-2 text-text-secondary hover:bg-off-white" aria-label="Search">
+          {/* <button className="rounded-full p-2 text-text-secondary hover:bg-off-white" aria-label="Search">
             <Search size={19} />
-          </button>
+          </button> */}
           {!user ? (
             <>
               <Link to="/login" className="btn-outline btn-sm">Login</Link>
