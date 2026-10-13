@@ -53,15 +53,6 @@ npm run dev
 
 Then open **http://localhost:5173** in your browser.
 
-<!-- ### Demo accounts (created by the seed script)
-
-| Role     | Email                  | Password     |
-|----------|-------------------------|--------------|
-| Admin    | admin@swiftship.com     | Admin@123    |
-| Customer | varun@example.com       | Customer@123 | -->
-
-<!-- Admin portal: **http://localhost:5173/admin/login** -->
-
 ## 4. Running server & client separately
 
 ```bash
